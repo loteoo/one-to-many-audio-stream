@@ -5,11 +5,11 @@ const Router = require('koa-router')
 
 const stream = require("stream")
 
-const audioStream = new stream.Readable()
 
 const app = new Koa()
 const router = new Router()
 
+const audioStream = new stream.Readable()
 
 router.get('/stream.mp3', (ctx, next) => {
   console.log(audioStream)
