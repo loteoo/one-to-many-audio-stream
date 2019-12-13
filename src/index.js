@@ -12,10 +12,10 @@ navigator.mediaDevices
   const mediaRecorder = new MediaRecorder(userMediaStream, {mimeType: 'audio/webm'});
 
   mediaRecorder.ondataavailable = event => {
-    socket.emit('sound-blob', event.data);
+    // socket.emit('sound-blob', event.data);
   }
 
-  mediaRecorder.start();
+  mediaRecorder.start(100); // chunk data every 100 ms
 })
 
 
@@ -25,7 +25,7 @@ const App = () => (
   <div>
     <h1>Audio streaming client</h1>
     <audio>
-      <source src="http://example.com/stream.mp3" type="audio/webm" />
+      {/* <source src="http://example.com/stream.mp3" type="audio/mp3" /> */}
     </audio>
   </div>
 )
